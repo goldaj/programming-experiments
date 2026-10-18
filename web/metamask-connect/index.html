@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect MetaMask</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #ff5722;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+    #status {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Connect to MetaMask</h1>
+  <button id="connectButton">Connect Wallet</button>
+  <div id="status">Wallet Address: Not connected</div>
+
+  <script>
+    const connectButton = document.getElementById('connectButton');
+    const statusElement = document.getElementById('status');
+
+    async function connectWallet() {
+      // Check if MetaMask is installed
+      if (window.ethereum) {
+        try {
+          // Request account access
+          const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+          const account = accounts[0];
+          statusElement.textContent = `Wallet Address: ${account}`;
+        } catch (error) {
+          console.error('Error connecting to wallet:', error);
+          if (error.code === 4001) {
+            statusElement.textContent = 'Connection request rejected. Please try again.';
+          } else {
+            statusElement.textContent = 'Error connecting to wallet.';
+          }
+        }
+      } else {
+        statusElement.textContent = 'MetaMask is not installed. Please install MetaMask.';
+      }
+    }
+
+    connectButton.addEventListener('click', connectWallet);
+
+    // Check for MetaMask installation
+    (async () => {
+      if (window.ethereum) {
+        statusElement.textContent = 'MetaMask is installed!';
+      } else {
+        statusElement.textContent = 'MetaMask is not installed. Please install MetaMask.';
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+{
+  "import_date": "2026-10-18",
+  "note": "Originals and source mappings remain local. Public configuration edits are described in README.",
+  "files": [
+    {
+      "path": "python/prime-number-analysis/main.py",
+      "source_group": "pycharm-practice",
+      "published_sha256": "d444869e5e1e41582562fcfc9c4698e6302d8b4e61371fcf1e7a1a6ca34ff002",
+      "source_sha256": "d444869e5e1e41582562fcfc9c4698e6302d8b4e61371fcf1e7a1a6ca34ff002"
+    },
+    {
+      "path": "python/prime-numbers-tkinter/main.py",
+      "source_group": "pycharm-practice",
+      "published_sha256": "5b02171c2526a957a01ead2c819dc3af3e928fbd87a876a0a74fa37c7c523b31",
+      "source_sha256": "5b02171c2526a957a01ead2c819dc3af3e928fbd87a876a0a74fa37c7c523b31"
+    },
+    {
+      "path": "python/branching-adventure-qt/main.py",
+      "source_group": "pycharm-practice",
+      "published_sha256": "bd8d4a435ad118d871f41c8467157d7f707f9931a8eb959cb6dbcae8ebf76f53",
+      "source_sha256": "bd8d4a435ad118d871f41c8467157d7f707f9931a8eb959cb6dbcae8ebf76f53"
+    },
+    {
+      "path": "cpp/project-euler/projet_euler_1_try1/main.cpp",
+      "source_group": "cpp-project-euler",
+      "published_sha256": "712aa8af5411c185cad8f3021fffede7484aff2dcb617d6f2e37105a77e48183",
+      "source_sha256": "712aa8af5411c185cad8f3021fffede7484aff2dcb617d6f2e37105a77e48183"
+    },
+    {
+      "path": "cpp/project-euler/projet_euler_1_try2/main.cpp",
+      "source_group": "cpp-project-euler",
+      "published_sha256": "d58ee5c50893f799f10c3c45fdebb920241af0afdf1e41a456df6842affef4b1",
+      "source_sha256": "d58ee5c50893f799f10c3c45fdebb920241af0afdf1e41a456df6842affef4b1"
+    },
+    {
+      "path": "cpp/project-euler/projet_euler_2_try1/main.cpp",
+      "source_group": "cpp-project-euler",
+      "published_sha256": "4f0088978ff23b49a95a03182c51035ed6aaa4345e76238c005a4de4bebbe477",
+      "source_sha256": "4f0088978ff23b49a95a03182c51035ed6aaa4345e76238c005a4de4bebbe477"
+    },
+    {
+      "path": "cpp/project-euler/try_hackerrank/main.cpp",
+      "source_group": "cpp-project-euler",
+      "published_sha256": "5550b6b6e4550e307450f126de483450a36767fc0c42dbdbb1496f3b05f4975a",
+      "source_sha256": "5550b6b6e4550e307450f126de483450a36767fc0c42dbdbb1496f3b05f4975a"
+    },
+    {
+      "path": "java/calculator/src/Calculator.java",
+      "source_group": "java-practice",
+      "published_sha256": "73aad3ce3ac0d3ace7a56bc2b600ce3883367c7ed78b22cd1105600232368be7",
+      "source_sha256": "73aad3ce3ac0d3ace7a56bc2b600ce3883367c7ed78b22cd1105600232368be7"
+    },
+    {
+      "path": "java/roman-numerals/src/Converter.java",
+      "source_group": "java-practice",
+      "published_sha256": "1923d2f2e5894711ad80e91d8fd6ed43902fab772329533bb250ab5598094bba",
+      "source_sha256": "1923d2f2e5894711ad80e91d8fd6ed43902fab772329533bb250ab5598094bba"
+    },
+    {
+      "path": "web/metamask-connect/index.html",
+      "source_group": "wallet-connect-ui-demo",
+      "published_sha256": "3b967b0e3ff055e7f569f7462d403758be04ba2e50964d94100e1ad4a83a826f",
+      "source_sha256": "3b967b0e3ff055e7f569f7462d403758be04ba2e50964d94100e1ad4a83a826f"
+    }
+  ]
+}
