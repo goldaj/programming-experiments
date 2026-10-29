@@ -26,3 +26,21 @@ Limite de l’expérience de transformation des nombres premiers : le script con
 ## Vérification des sources historiques
 
 Les deux exercices Java compilent avec le JDK local. Trois des quatre essais C++ passent la vérification syntaxique. `cpp/project-euler/projet_euler_2_try1/main.cpp` reste une ébauche non compilable : après activation de C++11, une référence à la variable `f` demeure non déclarée. Cette version est conservée comme travail inachevé ; elle n’est pas présentée comme une solution validée.
+
+## Aventure à embranchements : nouvelle version jouable
+
+L'ancienne démo PyQt de deux choix `python/branching-adventure-qt/main.py` reste intacte. Une nouvelle version **entièrement jouable en français** propose 18 scènes, des objets à récupérer, des choix conditionnels, 7 fins différentes et une sauvegarde automatique par étape.
+
+**Sans installation :**
+```bash
+python python/branching-adventure-qt/play_cli.py
+python python/branching-adventure-qt/play_cli.py --audit
+```
+
+**Avec interface :**
+```bash
+python -m pip install PyQt5
+python python/branching-adventure-qt/play_qt.py
+```
+
+Aucun réseau n'est utilisé. Une sauvegarde `.adventure_save.json` est créée localement et ignorée par Git. Les deux interfaces partagent le même moteur et le même format de sauvegarde. Tests automatiques sans PyQt : `python -m unittest discover -s tests -p 'test_branching_adventure.py' -v`. Voir [Guide aventure](docs/ADVENTURE_GUIDE.md) pour la reprise Codex, les limites et les méthodes de test.
