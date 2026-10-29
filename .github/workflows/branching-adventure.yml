@@ -1,0 +1,26 @@
+name: Branching adventure offline tests
+on:
+  pull_request:
+  push:
+    branches: [main, 'feat/**']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  story-contract:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Test story transitions, saves and seven reachable endings
+        run: python -m unittest discover -s tests -p 'test_branching_adventure.py' -v
+      - name: Compile legacy plus new front ends without requiring a desktop
+        run: |
+          python -m py_compile python/branching-adventure-qt/main.py python/branching-adventure-qt/story_engine.py python/branching-adventure-qt/play_cli.py python/branching-adventure-qt/play_qt.py
+      - name: Audit all reachable story endings from CLI
+        run: python python/branching-adventure-qt/play_cli.py --audit
