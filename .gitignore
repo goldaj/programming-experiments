@@ -6,3 +6,7 @@ __pycache__/
 .idea/
 .env*
 *.csv
+
+# Local branching adventure progress, not source or demonstration data
+.adventure_save.json
+.adventure_save.json.*

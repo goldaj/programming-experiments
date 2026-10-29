@@ -1,0 +1,293 @@
+{
+  "title": "Les passages de la montagne",
+  "start": "crossroads",
+  "nodes": {
+    "crossroads": {
+      "title": "Le carrefour souterrain",
+      "text": "Une secousse a refermé l'entrée de la grotte. Au carrefour, une brise humide arrive de la forêt, un rail minier s'enfonce sous la montagne et un escalier grimpe vers une tour. Tu dois trouver une sortie, mais chaque route cache un choix.",
+      "choices": [
+        {
+          "label": "Explorer le sentier de la forêt",
+          "to": "forest"
+        },
+        {
+          "label": "Entrer dans l'ancienne mine",
+          "to": "mine"
+        },
+        {
+          "label": "Monter vers la tour de guet",
+          "to": "tower"
+        }
+      ]
+    },
+    "forest": {
+      "title": "La lisière",
+      "text": "Sous les sapins, une lanterne oubliée pend à une branche. Un ruisseau descend vers un vieux pont. Tu entends le grondement sourd de la montagne.",
+      "choices": [
+        {
+          "label": "Prendre la lanterne",
+          "to": "forest",
+          "not_items": [
+            "lantern"
+          ],
+          "gives": [
+            "lantern"
+          ]
+        },
+        {
+          "label": "Suivre le ruisseau",
+          "to": "bridge"
+        },
+        {
+          "label": "Revenir au carrefour",
+          "to": "crossroads"
+        }
+      ]
+    },
+    "mine": {
+      "title": "La mine abandonnée",
+      "text": "Le tunnel est stable pour l'instant. À gauche, le bureau du contremaître. À droite, un boyau sans lumière. Des traces récentes suivent les rails.",
+      "choices": [
+        {
+          "label": "Fouiller le bureau",
+          "to": "office"
+        },
+        {
+          "label": "Explorer le tunnel obscur avec la lanterne",
+          "to": "dark_tunnel",
+          "needs": [
+            "lantern"
+          ]
+        },
+        {
+          "label": "Revenir au carrefour",
+          "to": "crossroads"
+        }
+      ]
+    },
+    "office": {
+      "title": "Le bureau du contremaître",
+      "text": "Un carnet abîmé, une carte et une porte de service te font face. Une phrase du carnet mentionne une salle secrète et le prix de la curiosité.",
+      "choices": [
+        {
+          "label": "Récupérer la carte",
+          "to": "office",
+          "not_items": [
+            "map"
+          ],
+          "gives": [
+            "map"
+          ]
+        },
+        {
+          "label": "Déchiffrer le carnet",
+          "to": "office",
+          "not_flags": [
+            "clue"
+          ],
+          "sets": [
+            "clue"
+          ]
+        },
+        {
+          "label": "Ouvrir la porte de service",
+          "to": "chamber"
+        },
+        {
+          "label": "Retourner à la mine",
+          "to": "mine"
+        }
+      ]
+    },
+    "dark_tunnel": {
+      "title": "Le boyau des marques bleues",
+      "text": "La lanterne révèle des pictogrammes effacés. Une petite pierre gravée pulse doucement sous les rails.",
+      "choices": [
+        {
+          "label": "Ramasser la pierre gravée",
+          "to": "dark_tunnel",
+          "not_items": [
+            "rune"
+          ],
+          "gives": [
+            "rune"
+          ]
+        },
+        {
+          "label": "Suivre les rails jusqu'à une chambre",
+          "to": "chamber"
+        },
+        {
+          "label": "Retourner à la mine",
+          "to": "mine"
+        }
+      ]
+    },
+    "chamber": {
+      "title": "La chambre du puits",
+      "text": "L'air se réchauffe. Une trappe en acier porte l'empreinte d'une pierre gravée. Plus loin, un conduit encombré semble rejoindre la surface.",
+      "choices": [
+        {
+          "label": "Poser la pierre dans l'empreinte",
+          "to": "vault",
+          "needs": [
+            "rune"
+          ]
+        },
+        {
+          "label": "Tenter le conduit instable",
+          "to": "collapse_end"
+        },
+        {
+          "label": "Retourner dans la mine",
+          "to": "mine"
+        }
+      ]
+    },
+    "vault": {
+      "title": "La salle interdite",
+      "text": "Dans la pénombre repose une relique lumineuse. Le carnet annonçait qu'elle pouvait réparer la vallée, ou l'enfermer à jamais sous terre.",
+      "choices": [
+        {
+          "label": "Prendre la relique en comprenant l'avertissement",
+          "to": "relic_end",
+          "needs": [
+            "rune"
+          ],
+          "requires_flags": [
+            "clue"
+          ]
+        },
+        {
+          "label": "Laisser la relique en paix",
+          "to": "wisdom_end"
+        },
+        {
+          "label": "Revenir à la chambre",
+          "to": "chamber"
+        }
+      ]
+    },
+    "tower": {
+      "title": "Le pied de la tour",
+      "text": "Un escalier ruiné s'élève au-dessus des arbres. Une voix paraît répondre aux échos de la vallée.",
+      "choices": [
+        {
+          "label": "Gravir les marches",
+          "to": "tower_top"
+        },
+        {
+          "label": "Revenir au carrefour",
+          "to": "crossroads"
+        }
+      ]
+    },
+    "tower_top": {
+      "title": "Le sommet",
+      "text": "Des voyageurs cherchent leur route au-delà de la gorge. Une lumière pourrait attirer leur attention. Un passage étroit mène aussi vers le pont.",
+      "choices": [
+        {
+          "label": "Faire des signaux avec la lanterne",
+          "to": "rescue_end",
+          "needs": [
+            "lantern"
+          ]
+        },
+        {
+          "label": "Descendre vers le pont",
+          "to": "bridge"
+        },
+        {
+          "label": "Retourner à la tour",
+          "to": "tower"
+        }
+      ]
+    },
+    "bridge": {
+      "title": "Le pont suspendu",
+      "text": "Le bois craque sous le vent. La rive opposée disparaît dans la brume. Sans repère, choisir la bonne passerelle relève du hasard.",
+      "choices": [
+        {
+          "label": "Utiliser la carte pour rejoindre le village",
+          "to": "village",
+          "needs": [
+            "map"
+          ]
+        },
+        {
+          "label": "Tenter la traversée sans carte",
+          "to": "lost_end",
+          "not_items": [
+            "map"
+          ]
+        },
+        {
+          "label": "Revenir vers la forêt",
+          "to": "forest"
+        }
+      ]
+    },
+    "village": {
+      "title": "Le village des passages",
+      "text": "Les habitants ont accueilli des rescapés, mais leurs réserves diminuent. Ta carte est précieuse. Tu peux aider ou négocier ton départ.",
+      "choices": [
+        {
+          "label": "Guider les rescapés avec ta carte",
+          "to": "hero_end",
+          "needs": [
+            "map"
+          ]
+        },
+        {
+          "label": "Vendre ta carte et partir",
+          "to": "merchant_end",
+          "needs": [
+            "map"
+          ],
+          "takes": [
+            "map"
+          ]
+        },
+        {
+          "label": "Retourner au carrefour",
+          "to": "crossroads"
+        }
+      ]
+    },
+    "collapse_end": {
+      "title": "Le dernier conduit",
+      "text": "Tu atteins la lumière du jour, mais le passage s'effondre derrière toi. Tu n'as rien emporté. La montagne t'a laissé une seconde chance.",
+      "ending": "Sortie périlleuse"
+    },
+    "relic_end": {
+      "title": "La gardienne des lueurs",
+      "text": "Grâce au carnet, tu comprends comment protéger la vallée. La relique rallume les fanaux abandonnés. Les habitants retrouvent la route des passages.",
+      "ending": "Secret maîtrisé"
+    },
+    "wisdom_end": {
+      "title": "La porte refermée",
+      "text": "Tu refermes le mécanisme sans toucher à la relique. La grotte s'apaise et un sentier sûr se dévoile derrière les rochers.",
+      "ending": "Sagesse"
+    },
+    "rescue_end": {
+      "title": "La lumière sur la tour",
+      "text": "Au crépuscule, les voyageurs aperçoivent tes signaux. Ils ouvrent une route de corde jusqu'au village et t'invitent à les rejoindre.",
+      "ending": "Secours"
+    },
+    "lost_end": {
+      "title": "La brume du pont",
+      "text": "Tu t'engages sans repère. La passerelle choisie revient sur elle-même et la nuit tombe. Il faudra tout recommencer.",
+      "ending": "Égaré"
+    },
+    "hero_end": {
+      "title": "La route partagée",
+      "text": "Ta carte permet de ramener les voyageurs au village. Tu repars avec leur confiance, et une histoire que personne ne croira tout à fait.",
+      "ending": "Guide de la vallée"
+    },
+    "merchant_end": {
+      "title": "Un marché au soleil",
+      "text": "Tu échanges la carte contre un passage hors de la vallée. Tu es riche d'une poignée de pièces, mais le chemin de ceux qui restent demeure incertain.",
+      "ending": "Marchand"
+    }
+  }
+}
