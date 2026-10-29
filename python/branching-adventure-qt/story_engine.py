@@ -187,14 +187,14 @@ class GameSession:
         if source.stat().st_size > MAX_SAVE_BYTES:
             raise StoryError("Save file is too large")
         data = json.loads(source.read_text(encoding="utf-8"))
-        if not isinstance(data, dict) or data.get("version") != STATE_VERSION:
+        if not isinstance(data, dict) or type(data.get("version")) is not int or data["version"] != STATE_VERSION:
             raise StoryError("Incompatible save version")
         if data.get("story_sha256") != story.fingerprint:
             raise StoryError("Save belongs to another story version")
         current, history = data.get("current"), data.get("history")
-        if current not in story.nodes or not isinstance(history, list) or not 1 <= len(history) <= 500:
+        if not isinstance(current, str) or current not in story.nodes or not isinstance(history, list) or not 1 <= len(history) <= 500:
             raise StoryError("Invalid save position")
-        if history[0] != story.start or history[-1] != current or any(x not in story.nodes for x in history):
+        if history[0] != story.start or history[-1] != current or any(not isinstance(x, str) or x not in story.nodes for x in history):
             raise StoryError("Invalid save history")
         items = _tokens(data.get("items"), "saved items")
         flags = _tokens(data.get("flags"), "saved flags")
